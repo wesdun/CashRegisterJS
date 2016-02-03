@@ -16,9 +16,10 @@ function drawer (price, cash, cid) {
     denominations['TWENTY'] = 20.00;
     denominations['ONE HUNDRED'] = 100.00;
 
-    if (cash == price) {
-        return "Closed";
-    } else if (cash > price) {
+//    if (cash == price) {
+//        return "Closed";
+//    } else if (cash > price) {
+    if(cash >= price){
         changeNeeded = decimal(cash - price);
             for(var i = cid.length-1; i >= 0; i--){
                 var denomCount = 0;
@@ -37,7 +38,10 @@ function drawer (price, cash, cid) {
     }
     if (decimal(changeNeeded) > 0) {
         return "Insufficient Funds";
-    } else {
+    } else if (decimal(sumOfDrawer(cid)) == 0) {
+        return "Closed";
+    }
+      else {
         return change;
     }
 }

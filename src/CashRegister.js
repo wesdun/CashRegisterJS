@@ -1,4 +1,4 @@
-function drawer (price, cash, cid) {
+function drawer (price, cashGiven, cashInDrawer) {
     const DENOMINATION = 0;
     const AMOUNT = 1;
 
@@ -16,18 +16,18 @@ function drawer (price, cash, cid) {
     denominations['TWENTY'] = 20.00;
     denominations['ONE HUNDRED'] = 100.00;
 
-    if(cash >= price){
-        changeNeeded = decimal(cash - price);
-            for(var i = cid.length-1; i >= 0; i--){
+    if(cashGiven >= price){
+        changeNeeded = decimal(cashGiven - price);
+            for(var i = cashInDrawer.length-1; i >= 0; i--){
                 var denomCount = 0;
-                var denomValue = denominations[cid[i][DENOMINATION]];
-                while ((decimal(changeNeeded) >= denomValue) & (cid[i][AMOUNT] > 0)){
+                var denomValue = denominations[cashInDrawer[i][DENOMINATION]];
+                while ((decimal(changeNeeded) >= denomValue) & (cashInDrawer[i][AMOUNT] > 0)){
                     denomCount += 1;
                     changeNeeded -= denomValue;
-                    cid[i][AMOUNT] -= denomValue;
+                    cashInDrawer[i][AMOUNT] -= denomValue;
                 }
                 if(denomCount > 0){
-                    change.push([cid[i][DENOMINATION], denomCount*denomValue]);
+                    change.push([cashInDrawer[i][DENOMINATION], denomCount*denomValue]);
                 }
            }
     } else {
@@ -35,7 +35,7 @@ function drawer (price, cash, cid) {
     }
     if (decimal(changeNeeded) > 0) {
         return "Insufficient Funds";
-    } else if (decimal(sumOfDrawer(cid)) == 0) {
+    } else if (decimal(sumOfDrawer(cashInDrawer)) == 0) {
         return "Closed";
     }
       else {
@@ -47,10 +47,10 @@ function decimal(num){
     return parseFloat(num.toFixed(2));
 }
 
-function sumOfDrawer (cid) {
+function sumOfDrawer (cashInDrawer) {
     var sum = 0;
-    for (var i = 0; i < cid.length; i++){
-        sum += cid[i][1];
+    for (var i = 0; i < cashInDrawer.length; i++){
+        sum += cashInDrawer[i][1];
     }
     return sum;
 }

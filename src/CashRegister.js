@@ -20,9 +20,6 @@ function drawer (price, cash, cid) {
         return "Closed";
     } else if (cash > price) {
         changeNeeded = decimal(cash - price);
-        if (sumOfDrawer(cid) < changeNeeded){
-            return "Insufficient Funds";
-        } else {
             for(var i = cid.length-1; i >= 0; i--){
                 var denomCount = 0;
                 var denomValue = denominations[cid[i][DENOMINATION]];
@@ -35,14 +32,16 @@ function drawer (price, cash, cid) {
                     change.push([cid[i][DENOMINATION], denomCount*denomValue]);
                 }
            }
-            return change;
-        }
     } else {
         return "Need more money.";
     }
-
-    return change;
+    if (decimal(changeNeeded) > 0) {
+        return "Insufficient Funds";
+    } else {
+        return change;
+    }
 }
+
 function decimal(num){
     return parseFloat(num.toFixed(2));
 }

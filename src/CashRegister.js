@@ -8,17 +8,25 @@ function drawer (price, cash, cid) {
     if (cash == price) {
         return "Closed";
     } else if (cash > price) {
-        changeNeeded = parseFloat((cash - price).toFixed(2));
+        changeNeeded = decimal(cash - price);
         if (sumOfDrawer(cid) < changeNeeded){
             return "Insufficient Funds";
         } else {
             for(var i = cid.length-1; i >= 0; i--){
-                if(changeNeeded <= cid[i][1]){
-                    change.push([cid[i][0], changeNeeded]);
-                    changeNeeded -= cid[i][1];
-                } else {
-
+                var denomCount = 0;
+                var denomValue = denominations[cid[i][0]];
+                while (decimal(changeNeeded) >= denomValue){
+                    denomCount += 1;
+                    changeNeeded -= denomValue;
                 }
+                change.push([cid[i][0], denomCount*denomValue]);
+
+                //if(changeNeeded <= cid[i][1]){
+                //    change.push([cid[i][0], changeNeeded]);
+                //    changeNeeded -= cid[i][1];
+                //} else {
+                //
+                //}
             }
             return change;
         }
@@ -27,6 +35,9 @@ function drawer (price, cash, cid) {
     }
 
     return change;
+}
+function decimal(num){
+    return parseFloat(num.toFixed(2));
 }
 
 function sumOfDrawer (cid) {

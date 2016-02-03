@@ -21,3 +21,7 @@ it('should return Insufficient Funds when cid is less than change', function(){
 it('should return correct change array with one denomination',function(){
     assert.deepEqual(drawer(0.01,0.03, [['PENNY',0.05]]), [['PENNY', 0.02]]);
 } );
+
+it('should return correct change array with two denominations', function(){
+    assert.deepEqual(drawer(0.02, 0.10, [['PENNY', 0.10], ['NICKEL', 0.15]]), [['NICKEL', 0.05], ['PENNY', 0.03]]);
+});

@@ -16,9 +16,6 @@ function drawer (price, cash, cid) {
     denominations['TWENTY'] = 20.00;
     denominations['ONE HUNDRED'] = 100.00;
 
-//    if (cash == price) {
-//        return "Closed";
-//    } else if (cash > price) {
     if(cash >= price){
         changeNeeded = decimal(cash - price);
             for(var i = cid.length-1; i >= 0; i--){

@@ -4,6 +4,13 @@ function drawer (price, cash, cid) {
     var denominations = {};
     denominations['PENNY'] = 0.01;
     denominations['NICKEL'] = 0.05;
+    denominations['DIME'] = 0.10;
+    denominations['QUARTER'] = 0.25;
+    denominations['ONE'] = 1.00;
+    denominations['FIVE'] = 5.00;
+    denominations['TEN'] = 10.00;
+    denominations['TWENTY'] = 20.00;
+    denominations['ONE HUNDRED'], 100.00;
 
     if (cash == price) {
         return "Closed";
@@ -20,13 +27,6 @@ function drawer (price, cash, cid) {
                     changeNeeded -= denomValue;
                 }
                 change.push([cid[i][0], denomCount*denomValue]);
-
-                //if(changeNeeded <= cid[i][1]){
-                //    change.push([cid[i][0], changeNeeded]);
-                //    changeNeeded -= cid[i][1];
-                //} else {
-                //
-                //}
             }
             return change;
         }
@@ -47,6 +47,5 @@ function sumOfDrawer (cid) {
     }
     return sum;
 }
-
 
 module.exports = drawer;

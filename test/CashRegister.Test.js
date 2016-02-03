@@ -14,5 +14,7 @@ it('should return Closed when price same as cash', function() {
     assert.equal(drawer(0, 0, []), "Closed");
 });
 
-
+it('should return Insufficient Funds when cid is less than change', function(){
+    assert.equal(drawer(1, 2, []), "Insufficient Funds");
+});
 

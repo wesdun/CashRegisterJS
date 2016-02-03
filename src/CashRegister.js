@@ -22,12 +22,15 @@ function drawer (price, cash, cid) {
             for(var i = cid.length-1; i >= 0; i--){
                 var denomCount = 0;
                 var denomValue = denominations[cid[i][0]];
-                while (decimal(changeNeeded) >= denomValue){
+                while ((decimal(changeNeeded) >= denomValue) & (cid[i][1] > 0)){
                     denomCount += 1;
                     changeNeeded -= denomValue;
+                    cid[i][1] -= denomValue;
                 }
-                change.push([cid[i][0], denomCount*denomValue]);
-            }
+                if(denomCount > 0){
+                    change.push([cid[i][0], denomCount*denomValue]);
+                }
+           }
             return change;
         }
     } else {

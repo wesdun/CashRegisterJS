@@ -25,7 +25,7 @@
         <entry file="file://$PROJECT_DIR$/src/CashRegister.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -34,9 +34,11 @@
       <file leaf-file-name="CashRegister.Test.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/CashRegister.Test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.059753954">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.41827768">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#40#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,6 +57,7 @@
       <list>
         <option value="$PROJECT_DIR$/CashRegister.js" />
         <option value="$PROJECT_DIR$/test/CashRegisterTests.js" />
+        <option value="$PROJECT_DIR$/src/CashRegister.js" />
         <option value="$PROJECT_DIR$/test/CashRegister.Test.js" />
       </list>
     </option>
@@ -156,18 +159,19 @@
     <property name="nodejs.mocha.node_interpreter_path" value="C:\Program Files\nodejs\node.exe" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="C:\Users\w_dun\AppData\Roaming\npm\node_modules\mocha" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/test" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="javascript.karma.karma_node_package_dir" value="C:\Users\w_dun\AppData\Roaming\npm\node_modules\karma" />
     <property name="javascript.karma.node_interpreter_path" value="C:\Program Files\nodejs\node.exe" />
+    <property name="javascript.nodejs.core.library.configured.version" value="4.2.6" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\w_dun\Google Drive\WebstormProjects\CashRegisterJS\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Karma.Karma">
+  <component name="RunManager" selected="Mocha.Mocha">
     <configuration default="false" name="CashRegister.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="C:/Program Files/nodejs/node" path-to-js-file="CashRegister.js" working-dir="$PROJECT_DIR$/src">
       <method />
     </configuration>
@@ -222,10 +226,23 @@
       <envs />
       <method />
     </configuration>
-    <list size="3">
+    <configuration default="false" name="Mocha" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui>tdd</ui>
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory>$PROJECT_DIR$/test</test-directory>
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Karma.Karma" />
-      <item index="1" class="java.lang.String" itemvalue="Node.js.CashRegister.js" />
-      <item index="2" class="java.lang.String" itemvalue="Node.js.CashRegister.Test.js" />
+      <item index="1" class="java.lang.String" itemvalue="Mocha.Mocha" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.CashRegister.js" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.CashRegister.Test.js" />
     </list>
     <recent_temporary>
       <list size="2">
@@ -248,8 +265,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unnamed - 2016.02.02 at 21h 05m 55s.xml">
-      <configuration name="Unnamed" configurationId="JavaScriptTestRunnerKarma" />
+    <history-entry file="Mocha - 2016.02.02 at 22h 37m 47s.xml">
+      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Mocha - 2016.02.02 at 22h 39m 39s.xml">
+      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Mocha - 2016.02.02 at 22h 39m 52s.xml">
+      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Mocha - 2016.02.02 at 22h 42m 15s.xml">
+      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Mocha - 2016.02.02 at 22h 44m 49s.xml">
+      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Mocha - 2016.02.02 at 22h 45m 01s.xml">
+      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Mocha - 2016.02.02 at 22h 45m 47s.xml">
+      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Mocha - 2016.02.02 at 22h 46m 23s.xml">
+      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Mocha - 2016.02.02 at 22h 46m 32s.xml">
+      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Mocha - 2016.02.02 at 22h 46m 52s.xml">
+      <configuration name="Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -282,19 +326,29 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/AppData/Roaming/npm/node_modules/requirejs/require.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3321617">
+          <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CashRegister.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/CashRegister.Test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.059753954">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.41827768">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#40#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

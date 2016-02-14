@@ -45,4 +45,6 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
-.idea/workspace.xml
+.idea/*
+node_modules/*
+npm-debug.log

@@ -38,3 +38,7 @@ it('should return Insufficient Funds when exact change not available', function(
 it('should return closed', function(){
     assert.equal(drawer(19.50, 20.00, [["PENNY", 0.50], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]), "Closed");
 });
+
+it('should return Need more money, if not enough cash is given', function(){
+    assert.equal(drawer(10, 8, [["ONE", 8]]), "Need more money.");
+});

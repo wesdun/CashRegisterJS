@@ -4,32 +4,34 @@ function drawer (price, cashGiven, cashInDrawer) {
 
     var change = [];
     var changeNeeded;
-    var denominations = {};
+    var denominationValues = {};
 
-    denominations['PENNY'] = 0.01;
-    denominations['NICKEL'] = 0.05;
-    denominations['DIME'] = 0.10;
-    denominations['QUARTER'] = 0.25;
-    denominations['ONE'] = 1.00;
-    denominations['FIVE'] = 5.00;
-    denominations['TEN'] = 10.00;
-    denominations['TWENTY'] = 20.00;
-    denominations['ONE HUNDRED'] = 100.00;
+    denominationValues['PENNY'] = 0.01;
+    denominationValues['NICKEL'] = 0.05;
+    denominationValues['DIME'] = 0.10;
+    denominationValues['QUARTER'] = 0.25;
+    denominationValues['ONE'] = 1.00;
+    denominationValues['FIVE'] = 5.00;
+    denominationValues['TEN'] = 10.00;
+    denominationValues['TWENTY'] = 20.00;
+    denominationValues['ONE HUNDRED'] = 100.00;
 
     if(cashGiven < price){
             return "Need more money.";
         } else {
-        changeNeeded = decimal(cashGiven - price);
+            changeNeeded = decimal(cashGiven - price);
+            var denominationCount, denomination, denominationValue;
             for(var i = cashInDrawer.length-1; i >= 0; i--){
-                var denomCount = 0;
-                var denomValue = denominations[cashInDrawer[i][DENOMINATION]];
-                while ((decimal(changeNeeded) >= denomValue) & (cashInDrawer[i][AMOUNT] > 0)){
-                    denomCount += 1;
-                    changeNeeded -= denomValue;
-                    cashInDrawer[i][AMOUNT] -= denomValue;
+                denominationCount = 0;
+                denomination = cashInDrawer[i][DENOMINATION];
+                denominationValue = denominationValues[denomination];
+                while (needsDenomination(changeNeeded, denominationValue) & hasDenomination(cashInDrawer[i])){
+                    denominationCount += 1;
+                    changeNeeded -= denominationValue;
+                    cashInDrawer[i][AMOUNT] -= denominationValue;
                 }
-                if(denomCount > 0){
-                    change.push([cashInDrawer[i][DENOMINATION], denomCount*denomValue]);
+                if(denominationCount > 0){
+                    change.push([denomination, denominationCount*denominationValue]);
                 }
            }
     }
@@ -42,6 +44,14 @@ function drawer (price, cashGiven, cashInDrawer) {
       else {
         return change;
     }
+}
+
+function hasDenomination(denominationInDrawer){
+    return denominationInDrawer[1] > 0;
+}
+
+function needsDenomination(changeNeeded, denominationValue){
+    return decimal(changeNeeded) >= denominationValue;
 }
 
 function decimal(num){

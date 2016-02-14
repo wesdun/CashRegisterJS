@@ -16,7 +16,9 @@ function drawer (price, cashGiven, cashInDrawer) {
     denominations['TWENTY'] = 20.00;
     denominations['ONE HUNDRED'] = 100.00;
 
-    if(cashGiven >= price){
+    if(cashGiven < price){
+            return "Need more money.";
+        } else {
         changeNeeded = decimal(cashGiven - price);
             for(var i = cashInDrawer.length-1; i >= 0; i--){
                 var denomCount = 0;
@@ -30,9 +32,8 @@ function drawer (price, cashGiven, cashInDrawer) {
                     change.push([cashInDrawer[i][DENOMINATION], denomCount*denomValue]);
                 }
            }
-    } else {
-        return "Need more money.";
     }
+
     if (decimal(changeNeeded) > 0) {
         return "Insufficient Funds";
     } else if (decimal(sumOfDrawer(cashInDrawer)) == 0) {

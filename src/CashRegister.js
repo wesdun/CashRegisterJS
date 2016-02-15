@@ -2,12 +2,10 @@ function drawer (price, cashGiven, cashInDrawer) {
     const DENOMINATION = 0;
     const AMOUNT = 1;
 
-    price *= 100;
-    cashGiven *= 100;
-    cashInDrawer.forEach(function(denomination){
-        denomination[AMOUNT] *= 100;
-    });
-
+    price = convertToCents(price);
+    cashGiven = convertToCents(cashGiven);
+    cashInDrawer = convertToCents(cashInDrawer);
+    
     var change = [];
     var changeNeeded;
     var denominationValues = {};
@@ -49,6 +47,18 @@ function drawer (price, cashGiven, cashInDrawer) {
     } else {
         return change;
     }
+}
+
+function convertToCents(cash){
+    if (typeof cash == 'number') {
+        cash *= 100;
+    } else if (typeof cash == 'object') {
+        cash.forEach(function(denomination){
+            denomination[1] *= 100;
+        });
+    }
+
+    return cash;
 }
 
 function hasDenomination(denominationInDrawer){
